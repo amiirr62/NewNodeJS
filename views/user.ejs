@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    
+    <h1><%= user.id %> , <%= user.first_name %></h1>
+
+    <div>
+        <form action="/user/<%= user.id %>?method=PUT" method="POST">
+            <input type="text" placeholder="id" name="id" value=<%=user.id %> >
+            <input type="text" placeholder="first_name" name="first_name" value=<%= user.first_name %>>
+            <input type="text" placeholder="email" name="email" value=<%= user.email %> >
+            <input type="text" placeholder="password" name="password" value=<%= user.password %>>
+            <input type="submit" value="Update" >
+        </form>
+        <br>
+    </div>
+</body>
+</html>

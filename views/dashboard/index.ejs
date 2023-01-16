@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <%- include('../components/validation-errors') -%>
+    <a href="/logout">Logout</a>
+    <h1>Hi <%= req.user.name %>, Welcome To Dashboard</h1>
+    <img src="<%= req.user.img %>" style="width: 100px; border-radius : 50%">
+    
+    <form action="/dashboard/edituser" method="POST" enctype="multipart/form-data">
+        <input type="text"   placeholder="name" name="name" value="<%= req.user.name %>">
+        <input type="file"   name="img">
+        <input type="submit" value="Send">
+    </form>
+
+    <br>
+    
+    <form action="/dashboard/pay" method="POST" style="border:2px dashed rgb(106, 170, 33)">
+        <h2>Credit Balance</h2>
+        <input type="number" placeholder="Amount" name="amount">
+        <input type="submit" value="Add Credit">
+    </form>
+    
+    
+</body>
+</html>

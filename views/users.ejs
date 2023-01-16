@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/style.css"
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <%- include('components/validation-errors') -%>
+
+        <% if(message){ %>
+            <div>
+                <h2><%= message %></h2>
+            </div>
+        <% } %>
+    
+    <div>
+        
+        <form action="/user" method="post">
+            <input type="text" placeholder="id" name="id" >
+            <input type="text" placeholder="first_name" name="first_name" >
+            <input type="text" placeholder="email" name="email" >
+            <input type="text" placeholder="password" name="password" >
+            <input type="submit" value="Create User" >
+        </form>
+        <br>
+    </div>
+    <div>
+    <table>
+        
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(user=>{ %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.password %></td>
+                    <td>
+                        <form action="/user/<%= user.id %>?method=DELETE" method="post">
+                            <input type="submit" value="Remove">
+                        </form>
+                        <a href="/user/<%= user.id %>">Update</a>
+                    </td>
+                </tr>
+            <% }) %>
+           
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

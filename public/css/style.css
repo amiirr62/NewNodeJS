@@ -1,0 +1,50 @@
+h1{
+background-color:purple;
+color: greenyellow;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+table {
+    border: 2px solid black;
+    padding: 2px;
+  }
+
+  th{
+    border: 2px solid black;
+    padding: 2px;
+    background-color:royalblue;
+    color: white;
+  }
+  td {
+    border: 1px solid black;
+    padding: 2px;
+    background-color: pink;
+    color: black;
+  }
+
+  ul>li {
+    display: table;
+    border :1px dotted black;
+    margin: 5px;
+    background-color: red;
+    color: yellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+
+  }
+
+  h2{
+    display: table;
+    background-color: royalblue;
+    color: gold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
+  }
+
+  h4{
+    background-color: goldenrod;
+    color: black;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
